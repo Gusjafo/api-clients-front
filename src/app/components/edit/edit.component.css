@@ -1,0 +1,13 @@
+.button-home {
+  position: fixed;
+  float: right;
+  cursor: pointer;
+  right: 26px;
+  top: 14px;
+  z-index: 1000;
+  opacity: 0.8;
+}
+
+img {
+  width: 30px;
+}

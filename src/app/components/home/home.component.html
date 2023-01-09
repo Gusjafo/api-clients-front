@@ -1,0 +1,31 @@
+<app-header [title]="title" ></app-header>
+<app-toolbar></app-toolbar>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Names</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Address</th>
+      <th scope="col">Cell Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">CUIT Nº</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr *ngFor="let client of clients | async" #client>
+      <th scope="row">{{client.id}}</th>
+      <td>{{client.names}}</td>
+      <td>{{client.surname}}</td>
+      <td>{{client.date_of_birth | date }}</td>
+      <td>{{client.address}}</td>
+      <td>{{client.cell_phone}}</td>
+      <td>{{client.email}}</td>
+      <td>{{client.cuit}}</td>
+      <td><a class="text-dark text-decoration-none fw-semibold" (click)="onEdit(client)">Edit</a></td>
+      <td><a class="text-dark text-decoration-none fw-semibold" (click)="onDelete(client)">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
